@@ -23,7 +23,7 @@ function defaultBackground(){
     const body = document.querySelector("body");
 
     if(body instanceof HTMLBodyElement){
-        body.style.backgroundColor = darkColor.backgrounds2;
+        body.style.backgroundColor = darkColor.backgrounds1;
     }
 
 }
@@ -38,7 +38,6 @@ function canvasStyle(canvas){
 
         canvas.height = window.innerHeight;
         canvas.width = window.innerWidth;
-        canvas.style.background = "radial-gradient("+darkColor.backgrounds2+","+darkColor.backgrounds1+")";
 
         return;
     }
@@ -47,42 +46,6 @@ function canvasStyle(canvas){
 
 }
 
-/**
- * fonction de création d'une vague
- */
-function vague(x){
-
-    const A = 50;//l'amplitude
-    const lambda = 0.002;//longueur d'onde
-    const k = lambda*2*Math.PI; //nombre oscilation 
-    const phi = 3;//décalage
-    return A*Math.sin(k*x+phi);
-}
-
-
-/**
- * affichage de la vague
- * @param CanvasRenderingContext2D  ctx
- */
-function drawVague(ctx){
-
-    if(ctx instanceof CanvasRenderingContext2D){
-        for(let t = 0;t < window.innerHeight;t+= 100){
-            for(let i = 0 ;i < window.innerWidth;i+=4.1){
-                let x = i
-                let y = vague(x)+(t);
-                ctx.beginPath();
-                ctx.moveTo(x,y)
-                ctx.fillStyle=`rgb(255,255,${i*0.2})`;
-                ctx.arc(x,y,6,0,Math.PI*2,true)
-                ctx.fill();
-                console.log("test")
-            }
-        }
-    
-    }
-
-}
 
 
 
@@ -98,7 +61,7 @@ function init(){
         const ctx = canvas.getContext('2d');
 
         canvasStyle(canvas);
-        drawVague(ctx)
+
 
     }
 }
@@ -106,7 +69,7 @@ function init(){
 try{
 
     init()
-
+    defaultBackground()
 }catch(error){
 
     console.log(error)

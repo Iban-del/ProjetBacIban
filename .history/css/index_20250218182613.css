@@ -1,7 +1,11 @@
 html,body{
     margin: 0px;
     overflow-x: clip;
+    background:radial-gradient(rgb(50, 50, 71), rgb(0, 0, 0));
+    font-style: oblique;
     display: flex;
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 .navBar{
@@ -19,6 +23,6 @@ html,body{
 .background-canvas{
     overflow-x: clip;
     background:radial-gradient(rgb(50, 50, 71), rgb(0, 0, 0));
-    z-index: 10;
+    z-index: -1;
     position: fixed;
 }

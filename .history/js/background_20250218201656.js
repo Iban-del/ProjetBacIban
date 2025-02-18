@@ -70,10 +70,10 @@ function drawVague(ctx){
         for(let t = 0;t < window.innerHeight;t+= 100){
             for(let i = 0 ;i < window.innerWidth;i+=4.1){
                 let x = i
-                let y = vague(x)+(t);
+                let y = vague(x)+(t)-(x*0.03);
                 ctx.beginPath();
                 ctx.moveTo(x,y)
-                ctx.fillStyle=`rgb(255,255,${i*0.2})`;
+                ctx.fillStyle="red";
                 ctx.arc(x,y,6,0,Math.PI*2,true)
                 ctx.fill();
                 console.log("test")

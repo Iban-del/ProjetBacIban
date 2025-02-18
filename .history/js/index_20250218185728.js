@@ -16,16 +16,16 @@ const darkColor ={
 
 //constante avec les couleur des composant 
 const lightColor ={
-    interactiveComponents1:"#F3EFF7",
-    interactiveComponents2:"#ECE5F4",
-    interactiveComponents3:"#E5DCF0",
-    bordersAndSeparators1:"#DED2EA",
-    bordersAndSeparators2:"#D2C4E2",
-    bordersAndSeparators3:"#C0AED5",
-    solidColors1:"#9980B3",
-    solidColors2:"#8D74A6",
-    accessibleText1:"#6F5A84",
-    accessibleText2:"#2A1E36",
+    interactiveComponents1:"",
+    interactiveComponents2:"",
+    interactiveComponents3:"",
+    bordersAndSeparators1:"",
+    bordersAndSeparators2:"",
+    bordersAndSeparators3:"",
+    solidColors1:"",
+    solidColors2:"",
+    accessibleText1:"",
+    accessibleText2:"",
 };
 
 /**
