@@ -50,9 +50,8 @@ function canvasStyle(canvas){
 /**
  * fonction de création d'une vague
  */
-function vague(x){
+function vague(x,A){
 
-    const A = 50;//l'amplitude
     const lambda = 0.002;//longueur d'onde
     const k = lambda*2*Math.PI; //nombre oscilation 
     const phi = 3;//décalage
@@ -64,26 +63,49 @@ function vague(x){
  * affichage de la vague
  * @param CanvasRenderingContext2D  ctx
  */
-function drawVague(ctx){
+function drawVague(ctx,canvas,A){
 
     if(ctx instanceof CanvasRenderingContext2D){
-        for(let t = 0;t < window.innerHeight;t+= 100){
-            for(let i = 0 ;i < window.innerWidth;i+=4.1){
+        
+        let color =0;
+        for(let t = -100;t < window.innerHeight+100;t+= 100){
+            ctx.beginPath();
+            for(let i = 0 ;i < window.innerWidth;i+=40){
                 let x = i
-                let y = vague(x)+(t);
-                ctx.beginPath();
+                let y = vague(x,A)+(t)+(x*0.1);
+                ctx.lineTo(x,y)
                 ctx.moveTo(x,y)
-                ctx.fillStyle=`rgb(255,255,${i*0.2})`;
+                ctx.fillStyle=`rgb(${color+(i*.1)},${color*0.9},${color+(i*.49)})`;
                 ctx.arc(x,y,6,0,Math.PI*2,true)
                 ctx.fill();
-                console.log("test")
             }
+            color+=30;
         }
-    
+        
     }
+
 
 }
 
+/**
+ * fonction pour annimer le fond 
+ */
+function animateBackground(ctx,canvas,A){
+
+    let steep = 1;
+    drawVague(ctx,canvas,A)
+
+    if(A > 900){
+
+        steep =1;
+
+    }else if(A < 10){
+        steep =-1;
+    }
+
+    //requestAnimationFrame(animateBackground(ctx,A+steep));
+
+}
 
 
 /**
@@ -94,11 +116,11 @@ function init(){
     const canvas = document.querySelector("canvas");
 
     if(canvas instanceof HTMLCanvasElement){
-
+    
         const ctx = canvas.getContext('2d');
 
         canvasStyle(canvas);
-        drawVague(ctx)
+        animateBackground(ctx,canvas,1000)
 
     }
 }
