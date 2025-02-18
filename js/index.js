@@ -3,7 +3,13 @@
 /**
  * création de la navBar
  */
-function navBar(){
+function navBar(parent){
+
+    if(parent instanceof HTMLElement){
+
+        parent.innerHTML = '';
+
+    }
 
 }
 
