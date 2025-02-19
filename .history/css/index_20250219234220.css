@@ -17,7 +17,6 @@ html,body{
     align-items: center;
     display:flex;
     justify-content: right;
-
 }
 
 .bg1{
@@ -31,7 +30,6 @@ html,body{
 ;
     z-index: -3;
     position: fixed;
-    
 }
 
 .button-navBar{

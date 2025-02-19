@@ -36,7 +36,7 @@ function canvasStyle(canvas){
 
         canvas.height = window.innerHeight;
         canvas.width = window.innerWidth;
-        canvas.style.background =`rgba(149, 223, 198, 0.48)`;
+        canvas.style.background = "radial-gradient("+color.backgrounds2+","+color.backgrounds1+")";
 
         return;
     }
@@ -74,9 +74,7 @@ function drawVague(ctx,canvas){
                 ctx.lineTo(x,y)
                 ctx.beginPath();
                 ctx.moveTo(x,y)
-                let globalColor= `rgb(${color+(X*0.05)+(A*0.5)},${color+50},${color+50+(X*0.03)})`
-                ctx.fillStyle=globalColor;
-                
+                ctx.fillStyle=`rgb(${color+(X*0.05)+(A*0.5)},${color+50},${color+50+(X*0.03)})`;
                 ctx.arc(x,y,70,0,Math.PI*2,true)
                 ctx.fill();
                 
@@ -107,12 +105,11 @@ function init(){
             A = Math.PI*2+(canvas.height*canvasMouseY)
             let canvasMouseX =(e.clientX *100 / canvas.width)/1000
             X = Math.PI*2+(canvas.width*canvasMouseX)*5
-            canvas.style.background = `rgb(${255-X*.05},${255-X*.06},${255-X*.02})`;
             drawVague(ctx, canvas)
             
         })
 
-        window.addEventListener("mousedown",(e)=>{
+        window.addEventListener("mouseleave",(e)=>{
             
             C = e.clientX
             drawVague(ctx, canvas)

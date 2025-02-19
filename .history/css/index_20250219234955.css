@@ -17,7 +17,6 @@ html,body{
     align-items: center;
     display:flex;
     justify-content: right;
-
 }
 
 .bg1{
@@ -31,7 +30,7 @@ html,body{
 ;
     z-index: -3;
     position: fixed;
-    
+    background-color: rgb(15, 128, 136);
 }
 
 .button-navBar{

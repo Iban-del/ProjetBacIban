@@ -17,7 +17,6 @@ html,body{
     align-items: center;
     display:flex;
     justify-content: right;
-
 }
 
 .bg1{
@@ -29,9 +28,8 @@ html,body{
 .bg2{
     overflow-x: clip;
 ;
-    z-index: -3;
+    z-index: 3;
     position: fixed;
-    
 }
 
 .button-navBar{

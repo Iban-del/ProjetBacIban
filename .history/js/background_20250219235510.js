@@ -107,7 +107,7 @@ function init(){
             A = Math.PI*2+(canvas.height*canvasMouseY)
             let canvasMouseX =(e.clientX *100 / canvas.width)/1000
             X = Math.PI*2+(canvas.width*canvasMouseX)*5
-            canvas.style.background = `rgb(${255-X*.05},${255-X*.06},${255-X*.02})`;
+            canvas.style.background = `rgb(${255-X*.05},${255},${255})`;
             drawVague(ctx, canvas)
             
         })

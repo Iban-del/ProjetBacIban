@@ -3,7 +3,7 @@ html,body{
     overflow-x: clip;
     display: flex;
     font-family: cursive;
-    color: rgb(18, 60, 63);
+    color: rgb(43, 6, 44);
 }
 
 .navBar{
@@ -17,21 +17,13 @@ html,body{
     align-items: center;
     display:flex;
     justify-content: right;
-
 }
 
-.bg1{
+.background-canvas{
     overflow-x: clip;
-    z-index: -1;
+    background:radial-gradient(rgb(50, 50, 71), rgb(0, 0, 0));
+    z-index: 3;
     position: fixed;
-}
-
-.bg2{
-    overflow-x: clip;
-;
-    z-index: -3;
-    position: fixed;
-    
 }
 
 .button-navBar{

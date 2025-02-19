@@ -16,8 +16,6 @@ const color ={
     accessibleText2:"#2A1E36",
 };
 
-const speedAnimation = 1500;
-
 //constante contenant les boutton de la navBar
 const NavBarButton = [
     {
@@ -80,49 +78,6 @@ function ManageHomePage(type = 1){
     const panel = document.querySelector('#home');
     const contentL = document.querySelector('#content-left');
     const contentR = document.querySelector('#content-right');
-    const Presentation = document.querySelector('#presentation');
-    const name = document.querySelector('#name'); 
-    const image = document.querySelector('#image'); 
-
-    if(type === 1){
-
-        name.animate([
-
-            { transform: "translateX(-50%) rotate(20deg)",'opacity':0},
-            { transform: "translateX(0%) rotate(0deg)",'opacity':1},
-
-    
-        ],
-        {
-            duration:speedAnimation,
-            fill: 'forwards'
-        })
-
-        image.animate([
-
-            { transform: "translateX(100%)",'opacity':0},
-            { transform: "translateX(0%)",'opacity':1},
-            
-    
-        ],
-        {
-            duration:speedAnimation,
-            fill: 'forwards'
-        })
-
-    }else if(type === 0){
-        name.animate([
-
-            { transform: "translateX(0%)",'opacity':1},
-            { transform: "translateX(-100%)",'opacity':0},
-    
-        ],
-        {
-            duration:speedAnimation,
-            fill: 'forwards'
-        })
-    }
-    
 
 }
 
@@ -132,13 +87,15 @@ function ManageHomePage(type = 1){
 function init(){
 
     drawNavBarButton()
-    ManageHomePage()
+
 }
 
 
 //lancement du script
-
+try{
 
     init()
 
-
+}catch(error){
+    displayError();
+}

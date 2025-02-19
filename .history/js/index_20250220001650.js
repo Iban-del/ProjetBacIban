@@ -16,8 +16,6 @@ const color ={
     accessibleText2:"#2A1E36",
 };
 
-const speedAnimation = 1500;
-
 //constante contenant les boutton de la navBar
 const NavBarButton = [
     {
@@ -88,25 +86,12 @@ function ManageHomePage(type = 1){
 
         name.animate([
 
-            { transform: "translateX(-50%) rotate(20deg)",'opacity':0},
-            { transform: "translateX(0%) rotate(0deg)",'opacity':1},
-
-    
-        ],
-        {
-            duration:speedAnimation,
-            fill: 'forwards'
-        })
-
-        image.animate([
-
-            { transform: "translateX(100%)",'opacity':0},
+            { transform: "translateX(-100%)",'opacity':0},
             { transform: "translateX(0%)",'opacity':1},
-            
     
         ],
         {
-            duration:speedAnimation,
+            duration:2000,
             fill: 'forwards'
         })
 
@@ -118,7 +103,7 @@ function ManageHomePage(type = 1){
     
         ],
         {
-            duration:speedAnimation,
+            duration:2000,
             fill: 'forwards'
         })
     }

@@ -17,7 +17,7 @@ html,body{
     align-items: center;
     display:flex;
     justify-content: right;
-
+    background-color: rgb(15, 128, 136);
 }
 
 .bg1{
