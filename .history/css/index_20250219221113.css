@@ -1,0 +1,32 @@
+html,body{
+    margin: 0px;
+    overflow-x: clip;
+    display: flex;
+}
+
+.navBar{
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.11);
+    z-index: 1;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    color: white;
+}
+
+.background-canvas{
+    overflow-x: clip;
+    background:radial-gradient(rgb(50, 50, 71), rgb(0, 0, 0));
+    z-index: 10;
+    position: fixed;
+}
+
+.button-navBar{
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-family: 50%;
+}
