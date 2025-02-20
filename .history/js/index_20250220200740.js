@@ -195,7 +195,7 @@ function ManageCvPage(type = 1){
 
     //récupération de tous les composant
     const panel = document.querySelector('#cv-panel');
-    const image = document.querySelector('#image-cv'); 
+    const image = document.querySelector('#image'); 
 
     if(type === 1){
 

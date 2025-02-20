@@ -36,12 +36,12 @@ html,body{
 
 .button-navBar{
     font-family: cursive;
-    z-index: 13;
+
     padding: 30px;
     text-decoration: none;
     background-color: transparent;
     border: none;
-    color: rgb(0, 0, 0);
+    color: white;
     font-size: 25px;
     font-weight: 500;
 }

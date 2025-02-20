@@ -129,7 +129,7 @@ function init(){
 
 try{
 
-    //init()
+    init()
 
 }catch(error){
 

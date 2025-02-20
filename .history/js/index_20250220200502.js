@@ -25,7 +25,6 @@ const NavBarButton = [
         id:"home",
         onclick:()=>{
             ManageHomePage(1)
-            ManageCvPage(0)
         }
     },
     {
@@ -33,7 +32,6 @@ const NavBarButton = [
         id:"cv",
         onclick:()=>{
             ManageHomePage(0)
-            ManageCvPage(1)
         }
     },
     {
@@ -41,7 +39,6 @@ const NavBarButton = [
         id:"cl",
         onclick:()=>{
             ManageHomePage(0)
-            ManageCvPage(0)
         }
     },
     {
@@ -49,7 +46,6 @@ const NavBarButton = [
         id:"video",
         onclick:()=>{
             ManageHomePage(0)
-            ManageCvPage(0)
         }
     },
 ]
@@ -195,7 +191,7 @@ function ManageCvPage(type = 1){
 
     //récupération de tous les composant
     const panel = document.querySelector('#cv-panel');
-    const image = document.querySelector('#image-cv'); 
+    const image = document.querySelector('#image'); 
 
     if(type === 1){
 

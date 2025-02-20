@@ -68,7 +68,7 @@ function drawVague(ctx,canvas){
         let color =0;
         for(let t = -200;t < window.innerHeight+200;t+= 100){
             ctx.beginPath();
-            for(let i = 0 ;i < window.innerWidth/2;i+=5){
+            for(let i = 0 ;i < window.innerWidth;i+=5){
                 let x = i+C
                 let y = vague(x,A)+(t);
                 ctx.lineTo(x,y)

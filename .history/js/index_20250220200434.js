@@ -25,7 +25,6 @@ const NavBarButton = [
         id:"home",
         onclick:()=>{
             ManageHomePage(1)
-            ManageCvPage(0)
         }
     },
     {
@@ -33,7 +32,6 @@ const NavBarButton = [
         id:"cv",
         onclick:()=>{
             ManageHomePage(0)
-            ManageCvPage(1)
         }
     },
     {
@@ -41,7 +39,6 @@ const NavBarButton = [
         id:"cl",
         onclick:()=>{
             ManageHomePage(0)
-            ManageCvPage(0)
         }
     },
     {
@@ -49,7 +46,6 @@ const NavBarButton = [
         id:"video",
         onclick:()=>{
             ManageHomePage(0)
-            ManageCvPage(0)
         }
     },
 ]
@@ -195,13 +191,23 @@ function ManageCvPage(type = 1){
 
     //récupération de tous les composant
     const panel = document.querySelector('#cv-panel');
-    const image = document.querySelector('#image-cv'); 
+    const image = document.querySelector('#image'); 
 
     if(type === 1){
 
         if(panel instanceof HTMLElement){
             panel.style.visibility = 'visible'
         }
+
+        name.animate([
+
+            { transform: "translateX(-50%) rotate(20deg)",'opacity':0},
+            { transform: "translateX(0%) rotate(0deg)",'opacity':1},
+        ],
+        {
+            duration:speedAnimation,
+            fill: 'forwards'
+        })
 
         image.animate([
 
@@ -215,13 +221,46 @@ function ManageCvPage(type = 1){
             fill: 'forwards'
         })
 
+        Presentation.animate([
+
+            { transform: "translateX(-100%)",'opacity':0},
+            { transform: "translateX(0%)",'opacity':1},
+            
     
+        ],
+        {
+            duration:speedAnimation,
+            fill: 'forwards'
+        })
 
     }else if(type === 0){
+        name.animate([
+
+            { transform: "translateX(0%)",'opacity':1},
+            { transform: "translateX(-100%)",'opacity':0},
+    
+        ],
+        {
+            duration:speedAnimation,
+            fill: 'forwards'
+        })
+
         image.animate([
 
             { transform: "translateX(0%)",'opacity':1},
             { transform: "translateX(100%)",'opacity':0},
+            
+    
+        ],
+        {
+            duration:speedAnimation,
+            fill: 'forwards'
+        })
+
+        Presentation.animate([
+
+            { transform: "translateX(0%)",'opacity':1},
+            { transform: "translateX(-100%)",'opacity':0},
             
     
         ],

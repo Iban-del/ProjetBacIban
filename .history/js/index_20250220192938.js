@@ -22,34 +22,26 @@ const speedAnimation = 1000;
 const NavBarButton = [
     {
         name:"Acceuil",
-        id:"home",
         onclick:()=>{
-            ManageHomePage(1)
-            ManageCvPage(0)
+            
         }
     },
     {
         name:"Cv",
-        id:"cv",
         onclick:()=>{
             ManageHomePage(0)
-            ManageCvPage(1)
         }
     },
     {
         name:"Lettre de motivation",
-        id:"cl",
         onclick:()=>{
             ManageHomePage(0)
-            ManageCvPage(0)
         }
     },
     {
-        name:"Vidéo",
-        id:"video",
+        name:"Video",
         onclick:()=>{
             ManageHomePage(0)
-            ManageCvPage(0)
         }
     },
 ]
@@ -71,16 +63,15 @@ function drawNavBarButton(){
     const navBar = document.querySelector('#navBar');
 
     if(navBar instanceof HTMLElement && NavBarButton){
-        NavBarButton.forEach((element) => {
-            const button = document.createElement("button");
-            button.id = element.id;
-            button.className = "button-navBar";
-            button.textContent = element.name;
-            button.addEventListener("click", () => {
-                element.onclick();
-            });
-            navBar.appendChild(button);
+        NavBarButton.map((element)=>{
+            navBar.innerHTML += `<div> <button id="${element.name}" onClick="${()=>{element.onclick}}" class="button-navBar">${element.name}</button></div>`;
+            console.log(document)
+            document.querySelector(`#${element.name}`).addEventListener("click",()=>{
+                element.onclick()
+            })
         });
+
+       
     }
 }
 
@@ -93,7 +84,7 @@ function drawNavBarButton(){
 function ManageHomePage(type = 1){
 
     //récupération de tous les composant
-    const panel = document.querySelector('#home-panel');
+    const panel = document.querySelector('#home');
     const contentL = document.querySelector('#content-left');
     const contentR = document.querySelector('#content-right');
     const Presentation = document.querySelector('#presentation');
@@ -101,10 +92,6 @@ function ManageHomePage(type = 1){
     const image = document.querySelector('#image'); 
 
     if(type === 1){
-
-        if(panel instanceof HTMLElement){
-            panel.style.visibility = 'visible'
-        }
 
         name.animate([
 
@@ -174,71 +161,11 @@ function ManageHomePage(type = 1){
         {
             duration:speedAnimation,
             fill: 'forwards'
-        }).addEventListener('finish', () => {
-            if(panel instanceof HTMLElement){
-                panel.style.visibility = 'hidden'
-            }
-        });
-    }
-    
-
-}
-
-
-
-/**
- * cette fonction gère les annimation de la page de garde
- * type = 1 => afficher
- * type = 0 => cacher
- */
-function ManageCvPage(type = 1){
-
-    //récupération de tous les composant
-    const panel = document.querySelector('#cv-panel');
-    const image = document.querySelector('#image-cv'); 
-
-    if(type === 1){
-
-        if(panel instanceof HTMLElement){
-            panel.style.visibility = 'visible'
-        }
-
-        image.animate([
-
-            { transform: "translateX(100%)",'opacity':0},
-            { transform: "translateX(0%)",'opacity':1},
-            
-    
-        ],
-        {
-            duration:speedAnimation,
-            fill: 'forwards'
         })
-
-    
-
-    }else if(type === 0){
-        image.animate([
-
-            { transform: "translateX(0%)",'opacity':1},
-            { transform: "translateX(100%)",'opacity':0},
-            
-    
-        ],
-        {
-            duration:speedAnimation,
-            fill: 'forwards'
-        }).addEventListener('finish', () => {
-            if(panel instanceof HTMLElement){
-                panel.style.visibility = 'hidden'
-            }
-        });
     }
     
 
 }
-
-
 
 /**
  * cette fonction permet d'initialiser le site
