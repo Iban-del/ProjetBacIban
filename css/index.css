@@ -3,7 +3,7 @@ html,body{
     overflow-x: clip;
     display: flex;
     font-family: cursive;
-    color: rgb(18, 60, 63);
+    color: rgb(0, 0, 0);
 }
 
 .navBar{
@@ -11,7 +11,7 @@ html,body{
     width: 100%;
     position: fixed;
     background-color: rgba(255, 255, 255, 0.11);
-    z-index: 2;
+ 
     display: flex;
     justify-content: end;
     align-items: center;
@@ -35,12 +35,14 @@ html,body{
 }
 
 .button-navBar{
-    padding: 15px;
+    font-family: cursive;
+
+    padding: 30px;
     text-decoration: none;
     background-color: transparent;
     border: none;
     color: white;
-    font-size: 100%;
+    font-size: 25px;
     font-weight: 500;
 }
 

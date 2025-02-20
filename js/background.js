@@ -82,10 +82,7 @@ function drawVague(ctx,canvas){
                 
             }
             color+=20;
-        }
-
-    
-        
+        }    
     }
 
 
@@ -113,17 +110,20 @@ function init(){
         })
 
         window.addEventListener("mousedown",(e)=>{
+            if(e.clientY > window.innerHeight*.1){
+                C = e.clientX
+                drawVague(ctx, canvas)
+            }
             
-            C = e.clientX
-            drawVague(ctx, canvas)
             
         })
 
+    
         const ctx = canvas.getContext('2d');
 
         canvasStyle(canvas);
         drawVague(ctx, canvas)
-
+        window.onresize = ()=>drawVague(ctx, canvas);
     }
 }
 
