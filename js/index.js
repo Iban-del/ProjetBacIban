@@ -15,7 +15,7 @@ const color ={
     accessibleText1:"#6F5A84",
     accessibleText2:"#2A1E36",
 };
-
+const panel = document.querySelector("#panel");
 const speedAnimation = 1000;
 
 //constante contenant les boutton de la navBar
@@ -24,32 +24,28 @@ const NavBarButton = [
         name:"Acceuil",
         id:"home",
         onclick:()=>{
-            ManageHomePage(1)
-            ManageCvPage(0)
+           
         }
     },
     {
         name:"Cv",
         id:"cv",
         onclick:()=>{
-            ManageHomePage(0)
-            ManageCvPage(1)
+           
         }
     },
     {
         name:"Lettre de motivation",
         id:"cl",
         onclick:()=>{
-            ManageHomePage(0)
-            ManageCvPage(0)
+           
         }
     },
     {
         name:"Vidéo",
         id:"video",
         onclick:()=>{
-            ManageHomePage(0)
-            ManageCvPage(0)
+           
         }
     },
 ]
@@ -57,11 +53,14 @@ const NavBarButton = [
 
 
 /**
- * cette fonction permet d'afficher un contenue d'érreur
+ * cette fonction détruit le conenu 
  */
-function displayError(){
-
+function destroyChild(){
+    while (panel.firstChild) {
+        panel.removeChild(div.firstChild);
+    }
 }
+
 
 /**
  * cette fonction permet 
@@ -86,157 +85,15 @@ function drawNavBarButton(){
 
 
 /**
- * cette fonction gère les annimation de la page de garde
- * type = 1 => afficher
- * type = 0 => cacher
+ * cette foncyion permet de géré la page pricipale
  */
-function ManageHomePage(type = 1){
+function manageHomePage(){
 
-    //récupération de tous les composant
-    const panel = document.querySelector('#home-panel');
-    const contentL = document.querySelector('#content-left');
-    const contentR = document.querySelector('#content-right');
-    const Presentation = document.querySelector('#presentation');
-    const name = document.querySelector('#name'); 
-    const image = document.querySelector('#image'); 
-
-    if(type === 1){
-
-        if(panel instanceof HTMLElement){
-            panel.style.visibility = 'visible'
-        }
-
-        name.animate([
-
-            { transform: "translateX(-50%) rotate(20deg)",'opacity':0},
-            { transform: "translateX(0%) rotate(0deg)",'opacity':1},
-        ],
-        {
-            duration:speedAnimation,
-            fill: 'forwards'
-        })
-
-        image.animate([
-
-            { transform: "translateX(100%)",'opacity':0},
-            { transform: "translateX(0%)",'opacity':1},
-            
-    
-        ],
-        {
-            duration:speedAnimation,
-            fill: 'forwards'
-        })
-
-        Presentation.animate([
-
-            { transform: "translateX(-100%)",'opacity':0},
-            { transform: "translateX(0%)",'opacity':1},
-            
-    
-        ],
-        {
-            duration:speedAnimation,
-            fill: 'forwards'
-        })
-
-    }else if(type === 0){
-        name.animate([
-
-            { transform: "translateX(0%)",'opacity':1},
-            { transform: "translateX(-100%)",'opacity':0},
-    
-        ],
-        {
-            duration:speedAnimation,
-            fill: 'forwards'
-        })
-
-        image.animate([
-
-            { transform: "translateX(0%)",'opacity':1},
-            { transform: "translateX(100%)",'opacity':0},
-            
-    
-        ],
-        {
-            duration:speedAnimation,
-            fill: 'forwards'
-        })
-
-        Presentation.animate([
-
-            { transform: "translateX(0%)",'opacity':1},
-            { transform: "translateX(-100%)",'opacity':0},
-            
-    
-        ],
-        {
-            duration:speedAnimation,
-            fill: 'forwards'
-        }).addEventListener('finish', () => {
-            if(panel instanceof HTMLElement){
-                panel.style.visibility = 'hidden'
-            }
-        });
-    }
     
 
 }
 
 
-
-/**
- * cette fonction gère les annimation de la page de garde
- * type = 1 => afficher
- * type = 0 => cacher
- */
-function ManageCvPage(type = 1){
-
-    //récupération de tous les composant
-    const panel = document.querySelector('#cv-panel');
-    const image = document.querySelector('#image-cv'); 
-
-    if(type === 1){
-
-        if(panel instanceof HTMLElement){
-            panel.style.visibility = 'visible'
-        }
-
-        image.animate([
-
-            { transform: "translateX(100%)",'opacity':0},
-            { transform: "translateX(0%)",'opacity':1},
-            
-    
-        ],
-        {
-            duration:speedAnimation,
-            fill: 'forwards'
-        })
-
-    
-
-    }else if(type === 0){
-        image.animate([
-
-            { transform: "translateX(0%)",'opacity':1},
-            { transform: "translateX(100%)",'opacity':0},
-            
-    
-        ],
-        {
-            duration:speedAnimation,
-            fill: 'forwards'
-        }).addEventListener('finish', () => {
-            if(panel instanceof HTMLElement){
-                panel.style.visibility = 'hidden'
-            }
-        });
-    }
-    
-
-}
 
 
 
@@ -244,15 +101,14 @@ function ManageCvPage(type = 1){
  * cette fonction permet d'initialiser le site
  */
 function init(){
-
-    drawNavBarButton()
-    ManageHomePage()
+    if(panel instanceof HTMLElement){
+        drawNavBarButton()
+        manageHomePage()
+    } 
 }
 
 
 //lancement du script
-
-
-    init()
+init()
 
 
