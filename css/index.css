@@ -1,17 +1,18 @@
 html,body{
     margin: 0px;
     overflow-x: clip;
+    overflow-y:scroll;
     display: flex;
-    font-family: cursive;
-    color: rgb(0, 0, 0);
+    font-family:Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    background-color: #FAF8FD;
 }
 
 .navBar{
     height: 10%;
     width: 100%;
     position: fixed;
-    background-color: rgba(255, 255, 255, 0.11);
- 
+    background-color: #9980B3;
     display: flex;
     justify-content: end;
     align-items: center;
@@ -41,7 +42,7 @@ html,body{
     text-decoration: none;
     background-color: transparent;
     border: none;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-size: 25px;
     font-weight: 500;
 }
@@ -62,10 +63,14 @@ html,body{
 }
 
 .content-left{
+    padding: 5px;
     width: 50%;
+    height: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #6F5A84;
+    border-radius: 21px;
 }
 
 .content-right{
@@ -96,6 +101,24 @@ p{
     display: none;
 }
 
+.cv-image{
+   
+    height: 100%;
+    border: 2px solid #2A1E36;
+    
+}
+
+.content-cv{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    overflow-y:scroll;
+    scrollbar-width:none;
+    justify-content:center;
+    align-content: center;
+}
+
 @media screen and (max-width: 900px) {
     html,body{
         margin: 0px;
@@ -103,7 +126,6 @@ p{
         display: flex;
         overflow-y:scroll;
         scrollbar-width:none;
-        font-family: cursive;
         color: rgb(33, 35, 39);
     }
     
@@ -169,3 +191,16 @@ p{
     }
     
 }
+
+/* const color ={
+    interactiveComponents1:"#F3EFF7",
+    interactiveComponents2:"#ECE5F4",
+    interactiveComponents3:"#E5DCF0",
+    bordersAndSeparators1:"#DED2EA",
+    bordersAndSeparators2:"#D2C4E2",
+    bordersAndSeparators3:"#C0AED5",
+    solidColors1:"#9980B3",
+    solidColors2:"#8D74A6",
+    accessibleText1:"#6F5A84",
+    accessibleText2:"#2A1E36",
+}; */

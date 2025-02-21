@@ -1,22 +1,5 @@
 //création des page
 
-//constante avec les couleur des composant 
-
-//constante avec les couleur des composant 
-const color ={
-    interactiveComponents1:"#F3EFF7",
-    interactiveComponents2:"#ECE5F4",
-    interactiveComponents3:"#E5DCF0",
-    bordersAndSeparators1:"#DED2EA",
-    bordersAndSeparators2:"#D2C4E2",
-    bordersAndSeparators3:"#C0AED5",
-    solidColors1:"#9980B3",
-    solidColors2:"#8D74A6",
-    accessibleText1:"#6F5A84",
-    accessibleText2:"#2A1E36",
-};
-const panel = document.querySelector("#panel");
-const speedAnimation = 1000;
 
 //constante contenant les boutton de la navBar
 const NavBarButton = [
@@ -24,46 +7,79 @@ const NavBarButton = [
         name:"Acceuil",
         id:"home",
         onclick:()=>{
-           
+            loadPage("home")
         }
     },
     {
         name:"Cv",
         id:"cv",
         onclick:()=>{
-           
+            loadPage("cv")
         }
     },
     {
         name:"Lettre de motivation",
         id:"cl",
         onclick:()=>{
-           
+            loadPage("coveringLetter")
         }
     },
     {
         name:"Vidéo",
         id:"video",
         onclick:()=>{
-           
+            loadPage("video")
         }
     },
 ]
 
 
-
 /**
- * cette fonction détruit le conenu 
+ * cette fonction permet de charger une page
  */
-function destroyChild(){
-    while (panel.firstChild) {
-        panel.removeChild(div.firstChild);
+function loadPage(name){
+    const baseUrl = "http://127.0.0.1:5500/html/"
+    //on charge les diférente page en fonction du nom fourni
+    switch(name){
+        case "home":
+            getPageContent(baseUrl+"home.html")
+            break
+        case "cv":
+            getPageContent(baseUrl+"cv.html")
+            break
+        case "coveringLetter":
+            getPageContent(baseUrl+"coveringLetter.html")
+            break
+        case "video":
+            getPageContent(baseUrl+"video.html")
+            break
     }
 }
 
+/**
+ * cette méthode permet de récupéré le contenu d'une page
+ */
+function getPageContent(link){
+    const panel = document.querySelector("#panel");
+    if(panel instanceof HTMLElement){
+        const request = new XMLHttpRequest();
+        request.addEventListener("load",(response)=>{
+            if(response instanceof ProgressEvent){
+               const content = response.target.responseText
+               if(content){
+                    panel.innerHTML = content;
+               }else{
+                    panel.innerHTML = "";
+               }
+            } 
+        })
+        request.open("GET",link)
+        request.send()
+    }
+}
 
 /**
- * cette fonction permet 
+ * cette fonction permet d'afficher les bouttons
  */
 function drawNavBarButton(){
 
@@ -84,27 +100,16 @@ function drawNavBarButton(){
 }
 
 
-/**
- * cette foncyion permet de géré la page pricipale
- */
-function manageHomePage(){
-
-    
-
-}
-
-
-
 
 
 /**
  * cette fonction permet d'initialiser le site
  */
 function init(){
-    if(panel instanceof HTMLElement){
-        drawNavBarButton()
-        manageHomePage()
-    } 
+
+    drawNavBarButton()
+    loadPage("home")
+    
 }
 
 
