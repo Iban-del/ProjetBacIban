@@ -113,10 +113,13 @@ function animateHome(type = 1){
     }
 
     for (let key in elements) {
-        if(!elements[key] instanceof HTMLElement){
+        if(!element instanceof HTMLElement){
             throw new Error("Les éléments ne sont pas trouvées");
         }
     }
+    elements.forEach(element =>{
+        
+    })
 
     const speedAnimationFast = 1000;
     let panelTranslate = {from:"-100%",to:"0%"}

@@ -8,7 +8,6 @@ const NavBarButton = [
         id:"home",
         onclick:()=>{
             loadPage("home")
-            
         }
     },
     {
@@ -44,7 +43,6 @@ function loadPage(name){
     switch(name){
         case "home":
             getPageContent(baseUrl+"home.html")
-            animateHome(1)
             break
         case "cv":
             getPageContent(baseUrl+"cv.html")
@@ -112,11 +110,11 @@ function animateHome(type = 1){
         image:document.querySelector("#image"),
     }
 
-    for (let key in elements) {
-        if(!elements[key] instanceof HTMLElement){
+    elements.forEach(element =>{
+        if(!element instanceof HTMLElement){
             throw new Error("Les éléments ne sont pas trouvées");
         }
-    }
+    })
 
     const speedAnimationFast = 1000;
     let panelTranslate = {from:"-100%",to:"0%"}

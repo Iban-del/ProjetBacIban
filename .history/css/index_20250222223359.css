@@ -2,15 +2,15 @@ html, body {
     margin: 0px;
     display: flex;
     font-family: Arial, Helvetica, sans-serif;
-    color: #E0E0E0; /* Gris clair */
-    background-color: #121212; /* Noir */
+    color: rgb(255, 255, 255);
+    background-color: #FDEDED; /* Rouge très clair */
 }
 
 .navBar {
     height: 10%;
     width: 100%;
     position: fixed;
-    background-color: #1F1F1F; /* Gris foncé */
+    background-color: #B71C1C; /* Rouge foncé */
     display: flex;
     justify-content: end;
     align-items: center;
@@ -35,14 +35,14 @@ html, body {
     text-decoration: none;
     background-color: transparent;
     border: none;
-    color: #E0E0E0; /* Gris clair */
+    color: rgb(255, 255, 255);
     font-size: 25px;
     font-weight: 500;
 }
 
 .button-navBar:hover {
     cursor: pointer;
-    color: #BDBDBD; /* Gris moyen */
+    color: #FFCDD2; /* Rouge clair */
 }
 
 .home {
@@ -62,7 +62,7 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #1E1E1E; /* Gris très foncé */
+    background-color: #D32F2F; /* Rouge intense */
     border-radius: 21px;
 }
 
@@ -89,7 +89,6 @@ html, body {
 
 p {
     font-size: 25px;
-    color: #BDBDBD; /* Gris moyen */
 }
 
 .bar {
@@ -98,7 +97,7 @@ p {
 
 .cv-image {
     height: 95%;
-    border: 2px solid #424242; /* Gris foncé */
+    border: 2px solid #880E4F; /* Rouge foncé */
 }
 
 .content-cv, .content-video {
@@ -117,8 +116,8 @@ p {
 .video {
     width: 70%;
     height: 80%;
-    border: 4px solid #616161; /* Gris */
-    background-color: #212121; /* Noir léger */
+    border: 4px solid #EF9A9A; /* Rouge pastel */
+    background-color: #B71C1C;
 }
 
 @media screen and (max-width: 900px) {
@@ -128,7 +127,7 @@ p {
         display: flex;
         overflow-y: scroll;
         scrollbar-width: none;
-        color: #E0E0E0;
+        color: rgb(33, 35, 39);
     }
 
     .home {
@@ -181,7 +180,7 @@ p {
         display: flex;
         height: 1px;
         width: 90%;
-        background-color: #424242; /* Gris foncé */
+        background-color: black;
         margin: 5%;
     }
 

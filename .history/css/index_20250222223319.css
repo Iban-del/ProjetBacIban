@@ -2,15 +2,15 @@ html, body {
     margin: 0px;
     display: flex;
     font-family: Arial, Helvetica, sans-serif;
-    color: #E0E0E0; /* Gris clair */
-    background-color: #121212; /* Noir */
+    color: rgb(255, 255, 255);
+    background-color: #E6F4EA; /* Vert très clair */
 }
 
 .navBar {
     height: 10%;
     width: 100%;
     position: fixed;
-    background-color: #1F1F1F; /* Gris foncé */
+    background-color: #2E7D32; /* Vert foncé */
     display: flex;
     justify-content: end;
     align-items: center;
@@ -35,14 +35,14 @@ html, body {
     text-decoration: none;
     background-color: transparent;
     border: none;
-    color: #E0E0E0; /* Gris clair */
+    color: rgb(255, 255, 255);
     font-size: 25px;
     font-weight: 500;
 }
 
 .button-navBar:hover {
     cursor: pointer;
-    color: #BDBDBD; /* Gris moyen */
+    color: #A5D6A7; /* Vert clair */
 }
 
 .home {
@@ -62,7 +62,7 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #1E1E1E; /* Gris très foncé */
+    background-color: #388E3C; /* Vert intense */
     border-radius: 21px;
 }
 
@@ -89,7 +89,6 @@ html, body {
 
 p {
     font-size: 25px;
-    color: #BDBDBD; /* Gris moyen */
 }
 
 .bar {
@@ -98,7 +97,7 @@ p {
 
 .cv-image {
     height: 95%;
-    border: 2px solid #424242; /* Gris foncé */
+    border: 2px solid #1B5E20; /* Vert foncé */
 }
 
 .content-cv, .content-video {
@@ -117,8 +116,8 @@ p {
 .video {
     width: 70%;
     height: 80%;
-    border: 4px solid #616161; /* Gris */
-    background-color: #212121; /* Noir léger */
+    border: 4px solid #81C784; /* Vert pastel */
+    background-color: #1B5E20;
 }
 
 @media screen and (max-width: 900px) {
@@ -128,7 +127,7 @@ p {
         display: flex;
         overflow-y: scroll;
         scrollbar-width: none;
-        color: #E0E0E0;
+        color: rgb(33, 35, 39);
     }
 
     .home {
@@ -181,7 +180,7 @@ p {
         display: flex;
         height: 1px;
         width: 90%;
-        background-color: #424242; /* Gris foncé */
+        background-color: black;
         margin: 5%;
     }
 
@@ -191,16 +190,3 @@ p {
         }
     }
 }
-
-/* const color ={
-    interactiveComponents1:"#F3EFF7",
-    interactiveComponents2:"#ECE5F4",
-    interactiveComponents3:"#E5DCF0",
-    bordersAndSeparators1:"#DED2EA",
-    bordersAndSeparators2:"#D2C4E2",
-    bordersAndSeparators3:"#C0AED5",
-    solidColors1:"#9980B3",
-    solidColors2:"#8D74A6",
-    accessibleText1:"#6F5A84",
-    accessibleText2:"#2A1E36",
-}; */
