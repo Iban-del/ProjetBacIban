@@ -119,6 +119,13 @@ p{
     align-content: center;
 }
 
+.video{
+    width:60%;
+    height:60%;
+    border: 2px solid #2A1E36;
+    background-color: #2A1E36;
+}
+
 @media screen and (max-width: 900px) {
     html,body{
         margin: 0px;
