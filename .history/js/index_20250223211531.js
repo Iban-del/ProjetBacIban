@@ -1,6 +1,6 @@
 //création des page
 var page = "home";
-const speedAnimationFast = 300;
+const speedAnimationFast = 700;
 //constante contenant les boutton de la navBar
 const NavBarButton = [
     {
@@ -225,7 +225,7 @@ function animateCv(type = 1){
     const image = document.querySelector("#image");
 
     if(image instanceof HTMLElement){
-        let imageTranslate = type ? {from:"190%",to:"0%"} :{from:"0%",to:"-190%"};
+        let imageTranslate = type ? {from:"190%",to:"0%"} :{from:"0%",to:"190%"};
         image.animate(
             [
                 {transform:`translateY(${imageTranslate.from})`},
@@ -250,7 +250,7 @@ function animateCl(type = 1){
     const image = document.querySelector("#image");
 
     if(image instanceof HTMLElement){
-        let imageTranslate = type ? {from:"190%",to:"0%"} :{from:"0%",to:"-190%"};
+        let imageTranslate = type ? {from:"190%",to:"0%"} :{from:"0%",to:"190%"};
         image.animate(
             [
                 {transform:`translateY(${imageTranslate.from})`},
@@ -275,13 +275,12 @@ function animateVideo(type = 1){
     const video = document.querySelector("#video-v");
 
     if(video instanceof HTMLElement){
-        let videoTranslateW = type ? {from:'0%',to:"70%"} :{from:"70%",to:"0%"};
-        let videoTranslateH = type ? {from:'0%',to:"80%"} :{from:"80%",to:"0%"};
+        let videoTranslate = type ? {from:'0%',to:"70%"} :{from:"70%",to:"0%"};
         video.animate(
             [
             
-                {width:videoTranslateW.from,height:videoTranslateH.from},
-                {width:videoTranslateW.to,height:videoTranslateH.to}
+                {width:videoTranslate.from},
+                {width:videoTranslate.to}
             ],
             {
                 duration: speedAnimationFast,
@@ -307,4 +306,5 @@ function init(){
 
 //lancement du script
 init()
+
 

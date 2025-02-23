@@ -12,7 +12,7 @@ const color ={
 var A = 100
 var X = 0
 var C = 0
-var h = window
+
 /**
  * fonction qui permet de géré le fond par default en cas d'érreur
  */
@@ -64,7 +64,7 @@ function vague(x,A){
 function drawVague(ctx,canvas){
 
     if(ctx instanceof CanvasRenderingContext2D){
-        ctx.clearRect(0, 0, window.width, window.height);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         let color =0;
         for(let t = -200;t < window.innerHeight+200;t+= 100){
             ctx.beginPath();

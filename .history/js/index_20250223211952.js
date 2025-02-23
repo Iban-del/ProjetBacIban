@@ -1,6 +1,6 @@
 //création des page
 var page = "home";
-const speedAnimationFast = 300;
+const speedAnimationFast = 700;
 //constante contenant les boutton de la navBar
 const NavBarButton = [
     {
@@ -307,4 +307,5 @@ function init(){
 
 //lancement du script
 init()
+
 

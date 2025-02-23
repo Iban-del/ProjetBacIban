@@ -275,7 +275,7 @@ function animateVideo(type = 1){
     const video = document.querySelector("#video-v");
 
     if(video instanceof HTMLElement){
-        let videoTranslateW = type ? {from:'0%',to:"70%"} :{from:"70%",to:"0%"};
+        let videoTranslateW = type ? {from:'0%',to:"80%"} :{from:"70%",to:"0%"};
         let videoTranslateH = type ? {from:'0%',to:"80%"} :{from:"80%",to:"0%"};
         video.animate(
             [
@@ -307,4 +307,5 @@ function init(){
 
 //lancement du script
 init()
+
 

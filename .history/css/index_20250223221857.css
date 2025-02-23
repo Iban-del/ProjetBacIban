@@ -118,10 +118,6 @@ p {
     background-color: #EDE7F6;
 }
 
-.image{
-    width:50%;    
-}
-
 /* Responsive Styles */
 @media (max-width: 1024px) {
     .home {
@@ -158,8 +154,6 @@ p {
         font-size: 20px;
     }
 }
-
-
 
 @media (max-width: 768px) {
     .navBar {

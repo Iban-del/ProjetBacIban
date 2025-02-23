@@ -1,6 +1,6 @@
 //création des page
 var page = "home";
-const speedAnimationFast = 300;
+const speedAnimationFast = 700;
 //constante contenant les boutton de la navBar
 const NavBarButton = [
     {
@@ -43,17 +43,17 @@ function loadPage(name,now = false){
     //on charge les diférente page en fonction du nom fourni
     switch(name){
         case "home":
-            getPageContent(baseUrl+"home.html",animateHome,now)
+            getPageContent(baseUrl+"home.html",animateHome)
             
             break
         case "cv":
-            getPageContent(baseUrl+"cv.html",animateCv,now)
+            getPageContent(baseUrl+"cv.html",animateCv)
             break
         case "coveringLetter":
-            getPageContent(baseUrl+"coveringLetter.html",animateCl,now)
+            getPageContent(baseUrl+"coveringLetter.html",animateCl)
             break
         case "video":
-            getPageContent(baseUrl+"video.html",animateVideo,now)
+            getPageContent(baseUrl+"video.html",animateVideo)
             break
     }
 }
@@ -69,14 +69,13 @@ async function getPageContent(link,animate = null,now = false){
             if(response instanceof ProgressEvent){
                 const content = response.target.responseText
                 if(content){
+                        panel.innerHTML = content;
                         if(animate){
                             if(now){
-                                panel.innerHTML = content;
                                 animate(1)
                             }else{
                                 hideAnimation(page)
                                 setTimeout(()=>{
-                                    panel.innerHTML = content;
                                     animate(1)
                                 },speedAnimationFast)
                                 
@@ -116,7 +115,7 @@ function drawNavBarButton(){
 
 function hideAnimation(currentPage){
 
-    if(currentPage){
+    if(currentPage instanceof String){
         switch(currentPage){
             case "home":
                 animateHome(0)
@@ -225,7 +224,7 @@ function animateCv(type = 1){
     const image = document.querySelector("#image");
 
     if(image instanceof HTMLElement){
-        let imageTranslate = type ? {from:"190%",to:"0%"} :{from:"0%",to:"-190%"};
+        let imageTranslate = type ? {from:"190%",to:"0%"} :{from:"0%",to:"190%"};
         image.animate(
             [
                 {transform:`translateY(${imageTranslate.from})`},
@@ -250,7 +249,7 @@ function animateCl(type = 1){
     const image = document.querySelector("#image");
 
     if(image instanceof HTMLElement){
-        let imageTranslate = type ? {from:"190%",to:"0%"} :{from:"0%",to:"-190%"};
+        let imageTranslate = type ? {from:"190%",to:"0%"} :{from:"0%",to:"190%"};
         image.animate(
             [
                 {transform:`translateY(${imageTranslate.from})`},
@@ -275,13 +274,12 @@ function animateVideo(type = 1){
     const video = document.querySelector("#video-v");
 
     if(video instanceof HTMLElement){
-        let videoTranslateW = type ? {from:'0%',to:"70%"} :{from:"70%",to:"0%"};
-        let videoTranslateH = type ? {from:'0%',to:"80%"} :{from:"80%",to:"0%"};
+        let videoTranslate = type ? {from:'0%',to:"70%"} :{from:"70%",to:"0%"};
         video.animate(
             [
             
-                {width:videoTranslateW.from,height:videoTranslateH.from},
-                {width:videoTranslateW.to,height:videoTranslateH.to}
+                {width:videoTranslate.from},
+                {width:videoTranslate.to}
             ],
             {
                 duration: speedAnimationFast,
@@ -307,4 +305,5 @@ function init(){
 
 //lancement du script
 init()
+
 

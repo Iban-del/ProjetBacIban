@@ -1,6 +1,6 @@
 //création des page
 var page = "home";
-const speedAnimationFast = 300;
+const speedAnimationFast = 700;
 //constante contenant les boutton de la navBar
 const NavBarButton = [
     {
@@ -275,13 +275,12 @@ function animateVideo(type = 1){
     const video = document.querySelector("#video-v");
 
     if(video instanceof HTMLElement){
-        let videoTranslateW = type ? {from:'0%',to:"70%"} :{from:"70%",to:"0%"};
-        let videoTranslateH = type ? {from:'0%',to:"80%"} :{from:"80%",to:"0%"};
+        let videoTranslate = type ? {from:'0%',to:"70%"} :{from:"70%",to:"0%"};
         video.animate(
             [
             
-                {width:videoTranslateW.from,height:videoTranslateH.from},
-                {width:videoTranslateW.to,height:videoTranslateH.to}
+                {width:videoTranslate.from},
+                {width:videoTranslate.to}
             ],
             {
                 duration: speedAnimationFast,
@@ -307,4 +306,5 @@ function init(){
 
 //lancement du script
 init()
+
 

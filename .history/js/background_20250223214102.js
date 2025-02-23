@@ -114,6 +114,7 @@ function init(){
         canvasStyle(canvas);
         drawVague(ctx, canvas)
         window.addEventListener('resize',()=>{
+            console.log("test")
             drawVague(ctx, canvas);
         })
 
