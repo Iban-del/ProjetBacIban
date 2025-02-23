@@ -47,10 +47,10 @@ function loadPage(name){
             
             break
         case "cv":
-            getPageContent(baseUrl+"cv.html",animateCv)
+            getPageContent(baseUrl+"cv.html",animateImage)
             break
         case "coveringLetter":
-            getPageContent(baseUrl+"coveringLetter.html",animateCl)
+            getPageContent(baseUrl+"coveringLetter.html",animateImage)
             break
         case "video":
             getPageContent(baseUrl+"video.html",animateVideo)
@@ -192,7 +192,7 @@ function animateHome(type = 1){
 /**
  * cette fonction permet d'animer les composant de la page pricipale
  */
-function animateCv(type = 1){
+function animateImage(type = 1){
     const image = document.querySelector("#image");
 
     if(image instanceof HTMLElement){
@@ -214,30 +214,7 @@ function animateCv(type = 1){
     }
 }
 
-/**
- * cette fonction permet d'animer les composant de la page pricipale
- */
-function animateCl(type = 1){
-    const image = document.querySelector("#image");
 
-    if(image instanceof HTMLElement){
-        let imageTranslate = type ? {from:"190%",to:"0%"} :{from:"0%",to:"190%"};
-        image.animate(
-            [
-                {transform:`translateY(${imageTranslate.from})`},
-                {transform:`translateY(${imageTranslate.to})`}
-            ],
-            {
-                duration: speedAnimationFast,
-                easing: "ease-out",
-                fill: "forwards"
-            }
-        ).addEventListener("finish",e=>{
-            page="cl"
-        })
-    
-    }
-}
 
 /**
  * cette fonction permet d'animer les composant de la page pricipale

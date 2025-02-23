@@ -183,9 +183,7 @@ function animateHome(type = 1){
             easing: "ease-out",
             fill: "forwards"
         }
-    ).addEventListener("finish",e=>{
-        page="home"
-    })
+    )  
 
 }
 
@@ -199,18 +197,15 @@ function animateCv(type = 1){
         let imageTranslate = type ? {from:"190%",to:"0%"} :{from:"0%",to:"190%"};
         image.animate(
             [
-                {transform:`translateY(${imageTranslate.from})`},
-                {transform:`translateY(${imageTranslate.to})`}
+                {transform:`translateX(${imageTranslate.from})`},
+                {transform:`translateX(${imageTranslate.to})`}
             ],
             {
                 duration: speedAnimationFast,
                 easing: "ease-out",
                 fill: "forwards"
             }
-        ).addEventListener("finish",e=>{
-            page="cv"
-        })
-    
+        )  
     }
 }
 
@@ -218,50 +213,14 @@ function animateCv(type = 1){
  * cette fonction permet d'animer les composant de la page pricipale
  */
 function animateCl(type = 1){
-    const image = document.querySelector("#image");
-
-    if(image instanceof HTMLElement){
-        let imageTranslate = type ? {from:"190%",to:"0%"} :{from:"0%",to:"190%"};
-        image.animate(
-            [
-                {transform:`translateY(${imageTranslate.from})`},
-                {transform:`translateY(${imageTranslate.to})`}
-            ],
-            {
-                duration: speedAnimationFast,
-                easing: "ease-out",
-                fill: "forwards"
-            }
-        ).addEventListener("finish",e=>{
-            page="cl"
-        })
-    
-    }
+    const image = document.querySelector("");
 }
 
 /**
  * cette fonction permet d'animer les composant de la page pricipale
  */
 function animateVideo(type = 1){
-    const video = document.querySelector("#video-v");
-
-    if(video instanceof HTMLElement){
-        let videoTranslate = type ? {from:'0%',to:"70%"} :{from:"70%",to:"0%"};
-        video.animate(
-            [
-            
-                {width:videoTranslate.from},
-                {width:videoTranslate.to}
-            ],
-            {
-                duration: speedAnimationFast,
-                easing: "ease-out",
-                fill: "forwards"
-            }
-        ).addEventListener("finish",e=>{
-            page="video"
-        })
-    }
+    const video = document.querySelector("");
 }
 
 /**

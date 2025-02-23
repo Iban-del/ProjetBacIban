@@ -1,6 +1,6 @@
 //création des page
 var page = "home";
-const speedAnimationFast = 700;
+
 //constante contenant les boutton de la navBar
 const NavBarButton = [
     {
@@ -47,13 +47,13 @@ function loadPage(name){
             
             break
         case "cv":
-            getPageContent(baseUrl+"cv.html",animateCv)
+            getPageContent(baseUrl+"cv.html")
             break
         case "coveringLetter":
-            getPageContent(baseUrl+"coveringLetter.html",animateCl)
+            getPageContent(baseUrl+"coveringLetter.html")
             break
         case "video":
-            getPageContent(baseUrl+"video.html",animateVideo)
+            getPageContent(baseUrl+"video.html")
             break
     }
 }
@@ -61,7 +61,7 @@ function loadPage(name){
 /**
  * cette méthode permet de récupéré le contenu d'une page
  */
-async function getPageContent(link,animate = null){
+function getPageContent(link,animate = null){
     const panel = document.querySelector("#panel");
     if(panel instanceof HTMLElement){
         const request = new XMLHttpRequest();
@@ -82,7 +82,6 @@ async function getPageContent(link,animate = null){
         request.send()
     }
 }
-
 
 /**
  * cette fonction permet d'afficher les bouttons
@@ -122,7 +121,7 @@ function animateHome(type = 1){
         }
     }
 
-    
+    const speedAnimationFast = 700;
     let panelTranslate = {from:"-100%",to:"0%"}
     let titleTranslate = {from:"-100%",to:"0%"}
     let textTranslate = {from:"-190%",to:"0%"}
@@ -175,17 +174,16 @@ function animateHome(type = 1){
 
     elements.image.animate(
         [
-            {transform:`translateX(${imageTranslate.from})`,opacity:panelOpacity.from},
-            {transform:`translateX(${imageTranslate.to})`,opacity:panelOpacity.to}
+            {transform:`translateX(${textTranslate.from})`},
+            {transform:`translateX(${textTranslate.to})`}
         ],
         {
             duration: speedAnimationFast,
             easing: "ease-out",
             fill: "forwards"
         }
-    ).addEventListener("finish",e=>{
-        page="home"
-    })
+    )  
+
 
 }
 
@@ -193,75 +191,21 @@ function animateHome(type = 1){
  * cette fonction permet d'animer les composant de la page pricipale
  */
 function animateCv(type = 1){
-    const image = document.querySelector("#image");
-
-    if(image instanceof HTMLElement){
-        let imageTranslate = type ? {from:"190%",to:"0%"} :{from:"0%",to:"190%"};
-        image.animate(
-            [
-                {transform:`translateY(${imageTranslate.from})`},
-                {transform:`translateY(${imageTranslate.to})`}
-            ],
-            {
-                duration: speedAnimationFast,
-                easing: "ease-out",
-                fill: "forwards"
-            }
-        ).addEventListener("finish",e=>{
-            page="cv"
-        })
-    
-    }
+    const image = document.querySelector("");
 }
 
 /**
  * cette fonction permet d'animer les composant de la page pricipale
  */
 function animateCl(type = 1){
-    const image = document.querySelector("#image");
-
-    if(image instanceof HTMLElement){
-        let imageTranslate = type ? {from:"190%",to:"0%"} :{from:"0%",to:"190%"};
-        image.animate(
-            [
-                {transform:`translateY(${imageTranslate.from})`},
-                {transform:`translateY(${imageTranslate.to})`}
-            ],
-            {
-                duration: speedAnimationFast,
-                easing: "ease-out",
-                fill: "forwards"
-            }
-        ).addEventListener("finish",e=>{
-            page="cl"
-        })
-    
-    }
+    const image = document.querySelector("");
 }
 
 /**
  * cette fonction permet d'animer les composant de la page pricipale
  */
 function animateVideo(type = 1){
-    const video = document.querySelector("#video-v");
-
-    if(video instanceof HTMLElement){
-        let videoTranslate = type ? {from:'0%',to:"70%"} :{from:"70%",to:"0%"};
-        video.animate(
-            [
-            
-                {width:videoTranslate.from},
-                {width:videoTranslate.to}
-            ],
-            {
-                duration: speedAnimationFast,
-                easing: "ease-out",
-                fill: "forwards"
-            }
-        ).addEventListener("finish",e=>{
-            page="video"
-        })
-    }
+    const video = document.querySelector("");
 }
 
 /**

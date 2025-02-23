@@ -47,10 +47,10 @@ function loadPage(name){
             
             break
         case "cv":
-            getPageContent(baseUrl+"cv.html",animateCv)
+            getPageContent(baseUrl+"cv.html",animateImage)
             break
         case "coveringLetter":
-            getPageContent(baseUrl+"coveringLetter.html",animateCl)
+            getPageContent(baseUrl+"coveringLetter.html",animateImage)
             break
         case "video":
             getPageContent(baseUrl+"video.html",animateVideo)
@@ -183,16 +183,14 @@ function animateHome(type = 1){
             easing: "ease-out",
             fill: "forwards"
         }
-    ).addEventListener("finish",e=>{
-        page="home"
-    })
+    )  
 
 }
 
 /**
  * cette fonction permet d'animer les composant de la page pricipale
  */
-function animateCv(type = 1){
+function animateImage(type = 1){
     const image = document.querySelector("#image");
 
     if(image instanceof HTMLElement){
@@ -207,46 +205,20 @@ function animateCv(type = 1){
                 easing: "ease-out",
                 fill: "forwards"
             }
-        ).addEventListener("finish",e=>{
-            page="cv"
-        })
-    
+        )  
     }
 }
 
-/**
- * cette fonction permet d'animer les composant de la page pricipale
- */
-function animateCl(type = 1){
-    const image = document.querySelector("#image");
 
-    if(image instanceof HTMLElement){
-        let imageTranslate = type ? {from:"190%",to:"0%"} :{from:"0%",to:"190%"};
-        image.animate(
-            [
-                {transform:`translateY(${imageTranslate.from})`},
-                {transform:`translateY(${imageTranslate.to})`}
-            ],
-            {
-                duration: speedAnimationFast,
-                easing: "ease-out",
-                fill: "forwards"
-            }
-        ).addEventListener("finish",e=>{
-            page="cl"
-        })
-    
-    }
-}
 
 /**
  * cette fonction permet d'animer les composant de la page pricipale
  */
 function animateVideo(type = 1){
-    const video = document.querySelector("#video-v");
+    const video = document.querySelector("#video");
 
     if(video instanceof HTMLElement){
-        let videoTranslate = type ? {from:'0%',to:"70%"} :{from:"70%",to:"0%"};
+        let videoTranslate = type ? {from:'0%',to:"100%"} :{from:"100%",to:"0%"};
         video.animate(
             [
             
@@ -258,9 +230,7 @@ function animateVideo(type = 1){
                 easing: "ease-out",
                 fill: "forwards"
             }
-        ).addEventListener("finish",e=>{
-            page="video"
-        })
+        )  
     }
 }
 

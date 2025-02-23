@@ -47,10 +47,10 @@ function loadPage(name){
             
             break
         case "cv":
-            getPageContent(baseUrl+"cv.html",animateCv)
+            getPageContent(baseUrl+"cv.html",animateImage)
             break
         case "coveringLetter":
-            getPageContent(baseUrl+"coveringLetter.html",animateCl)
+            getPageContent(baseUrl+"coveringLetter.html",animateImage)
             break
         case "video":
             getPageContent(baseUrl+"video.html",animateVideo)
@@ -233,7 +233,7 @@ function animateCl(type = 1){
                 fill: "forwards"
             }
         ).addEventListener("finish",e=>{
-            page="cl"
+            page="cv"
         })
     
     }
