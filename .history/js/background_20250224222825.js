@@ -58,35 +58,46 @@ function vague(x,A){
 
 
 /**
- * affichage de la vague
- * @param CanvasRenderingContext2D  ctx
+ * Affichage de la vague avec un dégradé vers #BB86FC et des couleurs plus claires
+ * @param {CanvasRenderingContext2D} ctx
+ * @param {HTMLCanvasElement} canvas
  */
-function drawVague(ctx,canvas){
+function drawVague(ctx, canvas) {
+    if (ctx instanceof CanvasRenderingContext2D) {
+        // Fond noir pour le mode sombre
+        ctx.fillStyle = "#121212"; // Noir légèrement éclairci
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    if(ctx instanceof CanvasRenderingContext2D){
-        ctx.clearRect(0, 0, window.width, window.height);
-        let color =0;
-        for(let t = -200;t < window.innerHeight+200;t+= 100){
+        let color = 100; // Base plus claire
+        const targetColor = { r: 187, g: 134, b: 252 }; // Code couleur #BB86FC
+
+        for (let t = -200; t < canvas.height + 200; t += 100) {
             ctx.beginPath();
-            for(let i = 0 ;i < window.innerWidth;i+=5){
-                let x = i+C
-                let y = vague(x,A/2)+(t);
-                ctx.lineTo(x,y)
+            for (let i = 0; i < canvas.width; i += 5) {
+                let x = i + C;
+                let y = vague(x, A / 2) + t;
+
+                ctx.lineTo(x, y);
+
+                // Calcul du dégradé progressif plus lumineux
+                let ratio = t / canvas.height; // Ratio de progression vers le bas
+                let red = Math.round(color + (targetColor.r - color) * ratio);
+                let green = Math.round(color + (targetColor.g - color) * ratio);
+                let blue = Math.round(color + (targetColor.b - color) * ratio);
+
+                let globalColor = `rgb(${red + 50}, ${green + 30}, ${blue + 60})`; // Éclaircissement
+
+                ctx.fillStyle = globalColor;
+
                 ctx.beginPath();
-                ctx.moveTo(x,y)
-                const addColor = 80
-                let globalColor= `rgb(${color+addColor},${color+addColor-12},${color+addColor+55})`
-                ctx.fillStyle=globalColor;
-                ctx.arc(x,y,70,0,Math.PI*2,true)
+                ctx.arc(x, y, 70, 0, Math.PI * 2, true);
                 ctx.fill();
-                
             }
-            color+=20;
-        }    
+            color += 30; // Augmente plus vite la luminosité
+        }
     }
-
-
 }
+
 
 
 

@@ -75,7 +75,7 @@ function drawVague(ctx,canvas){
                 ctx.beginPath();
                 ctx.moveTo(x,y)
                 const addColor = 80
-                let globalColor= `rgb(${color+addColor},${color+addColor-12},${color+addColor+55})`
+                let globalColor= `rgb(${color+addColor},${color+addColor-12},${color+addColor+9})`
                 ctx.fillStyle=globalColor;
                 ctx.arc(x,y,70,0,Math.PI*2,true)
                 ctx.fill();

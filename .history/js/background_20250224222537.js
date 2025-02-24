@@ -56,37 +56,38 @@ function vague(x,A){
     return A*Math.sin(k*x+phi);
 }
 
+function drawVague(ctx, canvas) {
+    if (!(ctx instanceof CanvasRenderingContext2D)) return;
 
-/**
- * affichage de la vague
- * @param CanvasRenderingContext2D  ctx
- */
-function drawVague(ctx,canvas){
+    // Définition d'un fond sombre
+    ctx.fillStyle = "#0A0A0A"; 
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    if(ctx instanceof CanvasRenderingContext2D){
-        ctx.clearRect(0, 0, window.width, window.height);
-        let color =0;
-        for(let t = -200;t < window.innerHeight+200;t+= 100){
-            ctx.beginPath();
-            for(let i = 0 ;i < window.innerWidth;i+=5){
-                let x = i+C
-                let y = vague(x,A/2)+(t);
-                ctx.lineTo(x,y)
-                ctx.beginPath();
-                ctx.moveTo(x,y)
-                const addColor = 80
-                let globalColor= `rgb(${color+addColor},${color+addColor-12},${color+addColor+55})`
-                ctx.fillStyle=globalColor;
-                ctx.arc(x,y,70,0,Math.PI*2,true)
-                ctx.fill();
-                
-            }
-            color+=20;
-        }    
+    let color = 50; // Couleur de base pour l'effet dégradé violet
+    const A = 50; // Amplitude de la vague (ajuster selon le besoin)
+    const C = 30; // Facteur de déplacement horizontal (ajuster selon le besoin)
+
+    function vague(x, amplitude) {
+        return amplitude * Math.sin(x * 0.02); // Fonction de vague
     }
 
+    for (let t = -200; t < canvas.height + 200; t += 100) {
+        ctx.beginPath();
+        for (let i = 0; i < canvas.width; i += 5) {
+            let x = i + C;
+            let y = vague(x, A / 2) + t;
 
+            ctx.lineTo(x, y);
+
+            ctx.fillStyle = `rgb(${color}, 0, ${color + 100})`; // Teinte violette
+            ctx.beginPath();
+            ctx.arc(x, y, 40, 0, Math.PI * 2, true); // Réduction de la taille des cercles
+            ctx.fill();
+        }
+        color += 20; // Augmente l'intensité du violet à chaque ligne
+    }
 }
+
 
 
 

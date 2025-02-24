@@ -58,35 +58,41 @@ function vague(x,A){
 
 
 /**
- * affichage de la vague
- * @param CanvasRenderingContext2D  ctx
+ * Affichage de la vague avec un thème sombre et violet
+ * @param {CanvasRenderingContext2D} ctx
+ * @param {HTMLCanvasElement} canvas
  */
-function drawVague(ctx,canvas){
+function drawVague(ctx, canvas) {
+    if (ctx instanceof CanvasRenderingContext2D) {
+        // Fond noir pour le thème sombre
+        ctx.fillStyle = "#0A0A0A"; 
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    if(ctx instanceof CanvasRenderingContext2D){
-        ctx.clearRect(0, 0, window.width, window.height);
-        let color =0;
-        for(let t = -200;t < window.innerHeight+200;t+= 100){
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        let color = 0; // Couleur de base
+
+        for (let t = -200; t < window.innerHeight + 200; t += 100) {
             ctx.beginPath();
-            for(let i = 0 ;i < window.innerWidth;i+=5){
-                let x = i+C
-                let y = vague(x,A/2)+(t);
-                ctx.lineTo(x,y)
-                ctx.beginPath();
-                ctx.moveTo(x,y)
-                const addColor = 80
-                let globalColor= `rgb(${color+addColor},${color+addColor-12},${color+addColor+55})`
-                ctx.fillStyle=globalColor;
-                ctx.arc(x,y,70,0,Math.PI*2,true)
-                ctx.fill();
+            for (let i = 0; i < window.innerWidth; i += 5) {
+                let x = i + C; 
+                let y = vague(x, A / 2) + t; 
                 
+                ctx.lineTo(x, y);
+                
+                // Dégradé violet
+                const addColor = 80;
+                let globalColor = `rgb(${color + addColor}, 0, ${color + addColor + 80})`;
+                ctx.fillStyle = globalColor;
+                
+                ctx.beginPath();
+                ctx.arc(x, y, 70, 0, Math.PI * 2, true);
+                ctx.fill();
             }
-            color+=20;
-        }    
+            color += 20; // Augmente l'intensité de la couleur
+        }
     }
-
-
 }
+
 
 
 
