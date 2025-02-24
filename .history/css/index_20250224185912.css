@@ -1,5 +1,5 @@
 html, body {
-    margin: 0px;
+    margin: 0;
     display: flex;
     font-family: Arial, Helvetica, sans-serif;
     color: #4A3B4E;
@@ -129,17 +129,13 @@ p {
         height: auto;
         top: 10%;
         display: flex;
-        overflow-y: scroll;
-      
-    
-    }
-
-    .image-me{
-        width: 100%;
+        justify-content: center;
+        align-items: center;
     }
 
     .content-left, .content-right {
-        width: 90%;
+        width: 100%;
+        height: auto;
         padding: 10px;
     }
 
@@ -216,13 +212,12 @@ p {
 
     .home {
         flex-direction: column;
-        height: 100%;
-        width: 90%;
+        height: auto;
     }
 
     .content-left, .content-right {
         width: 100%;
-        height: 100%;
+        height: auto;
         padding: 10px;
     }
 

@@ -130,7 +130,7 @@ p {
         top: 10%;
         display: flex;
         overflow-y: scroll;
-      
+        justify-content: center;
     
     }
 
@@ -222,7 +222,7 @@ p {
 
     .content-left, .content-right {
         width: 100%;
-        height: 100%;
+        height: auto;
         padding: 10px;
     }
 
