@@ -134,8 +134,6 @@
 
 //this file allow created and managed a background
 
-/** 2eme background */
-
 const canvas = document.querySelector("canvas")
 
 if(canvas){

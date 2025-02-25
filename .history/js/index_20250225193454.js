@@ -43,17 +43,17 @@ function loadPage(name,now = false){
     //on charge les diférente page en fonction du nom fourni
     switch(name){
         case "home":
-            getPageContent(baseUrl+"home.html",name,animateHome,now)
+            getPageContent(baseUrl+"home.html",animateHome,now)
             
             break
         case "cv":
-            getPageContent(baseUrl+"cv.html",name,animateCv,now)
+            getPageContent(baseUrl+"cv.html",animateCv,now)
             break
         case "coveringLetter":
-            getPageContent(baseUrl+"coveringLetter.html",name,animateCl,now)
+            getPageContent(baseUrl+"coveringLetter.html",animateCl,now)
             break
         case "video":
-            getPageContent(baseUrl+"video.html",name,animateVideo,now)
+            getPageContent(baseUrl+"video.html",animateVideo,now)
             break
     }
 }
@@ -73,7 +73,7 @@ async function getPageContent(link,name,animate = null,now = false){
                             if(now){
                                 panel.innerHTML = content;
                                 animate(1)
-                            }else if(name !== page){
+                            }else{
                                 hideAnimation(page)
                                 setTimeout(()=>{
                                     panel.innerHTML = content;

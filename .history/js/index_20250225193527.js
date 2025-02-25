@@ -73,7 +73,7 @@ async function getPageContent(link,name,animate = null,now = false){
                             if(now){
                                 panel.innerHTML = content;
                                 animate(1)
-                            }else if(name !== page){
+                            }else{
                                 hideAnimation(page)
                                 setTimeout(()=>{
                                     panel.innerHTML = content;

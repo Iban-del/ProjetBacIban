@@ -134,8 +134,6 @@
 
 //this file allow created and managed a background
 
-/** 2eme background */
-
 const canvas = document.querySelector("canvas")
 
 if(canvas){
@@ -266,6 +264,21 @@ if(canvas){
                 points = initialisePoints()
             })
     
+
+            canvas.addEventListener("mousemove",(e)=>{
+            
+                pointMouse.x = e.clientX;
+                pointMouse.y = e.clientY;
+
+            })
+
+            canvas.addEventListener("mouseout",()=>{
+                pointMouse.x = null;
+                pointMouse.y = null;
+            })
+
+            
+
         }
 
 

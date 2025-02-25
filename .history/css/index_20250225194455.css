@@ -1,9 +1,79 @@
+.dark, .dark-theme {
+--violet-1: #000;
+--violet-2: #141118;
+--violet-3: #231d2b;
+--violet-4: #2f2539;
+--violet-5: #382d44;
+--violet-6: #433750;
+--violet-7: #534562;
+--violet-8: #6f5c82;
+--violet-9: #9980b3;
+--violet-10: #8d74a6;
+--violet-11: #c1abd9;
+--violet-12: #ede7f5;
+
+--violet-a1: #00000000;
+--violet-a2: #d5b5ff18;
+--violet-a3: #d0acff2b;
+--violet-a4: #d3a6ff39;
+--violet-a5: #d2a9ff44;
+--violet-a6: #d6b0ff50;
+--violet-a7: #d8b4ff62;
+--violet-a8: #dab5ff82;
+--violet-a9: #dab7ffb3;
+--violet-a10: #d9b2ffa6;
+--violet-a11: #e3c9ffd9;
+--violet-a12: #f7f0fff5;
+
+--violet-contrast: #fff;
+--violet-surface: #28223080;
+--violet-indicator: #9980b3;
+--violet-track: #9980b3;
+}
+
+/* @supports (color: color(display-p3 1 1 1)) {
+@media (color-gamut: p3) {
+    .dark, .dark-theme {
+    --violet-1: oklch(0% 0.012 306.6);
+    --violet-2: oklch(18.4% 0.0147 306.6);
+    --violet-3: oklch(24.4% 0.0273 306.6);
+    --violet-4: oklch(28.5% 0.0371 306.6);
+    --violet-5: oklch(32% 0.0413 306.6);
+    --violet-6: oklch(36.1% 0.044 306.6);
+    --violet-7: oklch(41.7% 0.0498 306.6);
+    --violet-8: oklch(50.8% 0.0619 306.6);
+    --violet-9: oklch(64.2% 0.0796 306.6);
+    --violet-10: oklch(60.1% 0.0796 306.6);
+    --violet-11: oklch(77.5% 0.0692 306.6);
+    --violet-12: oklch(93.6% 0.02 306.6);
+
+    --violet-a1: color(display-p3 0 0 0 / 0);
+    --violet-a2: color(display-p3 0.8196 0.7333 0.9922 / 0.091);
+    --violet-a3: color(display-p3 0.8118 0.6902 1 / 0.165);
+    --violet-a4: color(display-p3 0.8039 0.6627 1 / 0.22);
+    --violet-a5: color(display-p3 0.8196 0.6824 1 / 0.259);
+    --violet-a6: color(display-p3 0.8353 0.7059 1 / 0.306);
+    --violet-a7: color(display-p3 0.8431 0.7294 1 / 0.377);
+    --violet-a8: color(display-p3 0.851 0.7333 1 / 0.499);
+    --violet-a9: color(display-p3 0.8471 0.7333 1 / 0.691);
+    --violet-a10: color(display-p3 0.8392 0.7176 1 / 0.64);
+    --violet-a11: color(display-p3 0.8824 0.8039 1 / 0.84);
+    --violet-a12: color(display-p3 0.9686 0.9451 1 / 0.957);
+
+    --violet-contrast: #fff;
+    --violet-surface: color(display-p3 0.1569 0.1333 0.1804 / 0.5);
+    --violet-indicator: oklch(64.2% 0.0796 306.6);
+    --violet-track: oklch(64.2% 0.0796 306.6);
+    }
+}
+} */
+
 html, body {
     margin: 0px;
     display: flex;
     font-family: Arial, Helvetica, sans-serif;
-    color: #9980b3;
-    background-color: #141118;
+    color: var(--violet-contrast);
+    background-color: var(--violet-2);
     height: 100%;
     width: 100%;
     height: auto;
@@ -13,7 +83,7 @@ html, body {
     height: 10%;
     width: 100%;
     position: fixed;
-    background-color: #231d2b;
+    background-color: var(--violet-5);
     display: flex;
     justify-content: end;
     align-items: center;
@@ -33,14 +103,14 @@ html, body {
     text-decoration: none;
     background-color: transparent;
     border: none;
-    color: #6f5c82;
+    color: var(--violet-12);
     font-size: 25px;
     font-weight: 500;
 }
 
 .button-navBar:hover {
     cursor: pointer;
-    color: #534562;
+    color: var(--violet-9);
 }
 
 .home {
@@ -51,18 +121,16 @@ html, body {
     top: 10%;
     background-color: transparent;
     margin: 15px;
-    justify-content: center;
-    align-content: center;
 }
 
 .content-left {
-    padding: 15px;
+    padding: 5px;
     width: 50%;
     height: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #2f2539;
+    background-color: var(--violet-4);
     border-radius: 21px;
 }
 
@@ -89,7 +157,7 @@ html, body {
 
 p {
     font-size: 25px;
-    color: #9980b3;
+    color: var(--violet-11);
 }
 
 .bar {
@@ -98,7 +166,7 @@ p {
 
 .cv-image {
     height: 95%;
-    border: 2px solid #433750;
+    border: 2px solid var(--violet-6);
 }
 
 .content-cv, .content-video {
@@ -117,13 +185,14 @@ p {
 .video {
     width: 70%;
     height: 80%;
-    border: 4px solid #534562;
-    background-color: #141118;
+    border: 4px solid var(--violet-8);
+    background-color: var(--violet-3);
 }
 
 .image {
-    width: 50%;
+    width: 50%;    
 }
+
 
 /* Responsive Styles */
 @media (max-width: 1024px) {

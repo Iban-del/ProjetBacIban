@@ -69,11 +69,11 @@ async function getPageContent(link,name,animate = null,now = false){
             if(response instanceof ProgressEvent){
                 const content = response.target.responseText
                 if(content){
-                        if(animate){
+                        if(animate && name !== page){
                             if(now){
                                 panel.innerHTML = content;
                                 animate(1)
-                            }else if(name !== page){
+                            }else{
                                 hideAnimation(page)
                                 setTimeout(()=>{
                                     panel.innerHTML = content;

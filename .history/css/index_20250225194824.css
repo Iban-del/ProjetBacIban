@@ -51,12 +51,10 @@ html, body {
     top: 10%;
     background-color: transparent;
     margin: 15px;
-    justify-content: center;
-    align-content: center;
 }
 
 .content-left {
-    padding: 15px;
+    padding: 5px;
     width: 50%;
     height: 500px;
     display: flex;
