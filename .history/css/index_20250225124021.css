@@ -214,6 +214,7 @@ p {
     }
 
     p {
+        box-sizing: border-box;
         font-size: 20px;
     }
 }
