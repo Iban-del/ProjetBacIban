@@ -1,0 +1,352 @@
+html, body {
+    margin: 0px;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #9980b3;
+    background-color: #141118;
+    height: 100%;
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+   
+}
+
+footer{
+    position: absolute;
+    width: 100%;
+    height:20%;
+    bottom: -20%;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+}
+
+.footer-content{
+    background-color: #ffffff;
+    position: absolute;
+    bottom: -90%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height:90%;
+}
+
+.navBar {
+    height: 10%;
+    width: 100%;
+    position: fixed;
+    background-color: #231d2b;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    z-index: 10;
+}
+
+.bg1, .bg2 {
+    overflow-x: clip;
+    z-index: -1;
+    position: fixed;
+}
+
+.button-navBar {
+   
+    z-index: 13;
+    padding: 30px;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    color: #6f5c82;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.button-navBar:hover {
+    cursor: pointer;
+    color: #534562;
+}
+
+.home {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    top: 10%;
+    background-color: transparent;
+    margin: 15px;
+    padding: 15px;
+    justify-content: center;
+    align-content: center;
+}
+
+.content-left {
+    transition: 1s;
+    padding: 15px;
+    width: 50%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2f2539;
+    border-radius: 21px;
+}
+
+
+.content-right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.name {
+    height: 20%;
+    width: 100%;
+}
+
+.h1-name {
+    font-size: 45px;
+    font-weight: 100;
+}
+
+.presentation {
+    width: 90%;
+}
+
+p {
+    font-size: 25px;
+    color: #9980b3;
+}
+
+.bar {
+    display: none;
+}
+
+.cv-image {
+    height: 95%;
+    border: 2px solid #433750;
+}
+
+.content-cv, .content-video {
+    margin-bottom: 91px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.video {
+    width: 70%;
+    height: 80%;
+    border: 4px solid #534562;
+    background-color: #141118;
+}
+
+.image {
+    width: 50%;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    html, body {
+        box-sizing: border-box;
+        height: auto;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+
+    .cv-image {
+        box-sizing: border-box;
+        height: 75%;
+        border: 2px solid #b68e8e;
+    }
+    
+    .content-cv, .content-video {
+        box-sizing: border-box;
+        display: flex;
+        margin: 0px;
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+    
+    
+    .home {
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-content: center;
+        height: 100%;
+        width: 100%;
+        overflow-y: scroll;
+        margin: 0px;
+        padding: 0px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .image-me{
+        box-sizing: border-box;
+        width: 50%;
+    }
+
+    .content-left, .content-right {
+        box-sizing: border-box;
+        position: relative;
+        top: 10%;
+        display: flex;
+        justify-content: center;
+        width: 90%;
+        height: auto;
+        padding: 10px;
+    }
+    .content-left {
+        box-sizing: border-box;
+        margin-bottom: 20px;
+    }
+
+    .button-navBar {
+        box-sizing: border-box;
+        font-size: 20px;
+        padding: 20px;
+    }
+
+    .content-video{
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+
+    .video {
+        box-sizing: border-box;
+        width: 90%;
+        height: 60%;
+    }
+
+    .h1-name {
+        box-sizing: border-box;
+        font-size: 35px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .navBar {
+        box-sizing: border-box;
+        height: 8%;
+    }
+
+    .button-navBar {
+        box-sizing: border-box;
+        font-size: 18px;
+        padding: 15px;
+    }
+
+    .content-left {
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .content-left, .content-right {
+        box-sizing: border-box;
+        position: relative;
+        top: 10%;
+        display: flex;
+        justify-content: center;
+        width: 90%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .video {
+        box-sizing: border-box;
+        width: 95%;
+        height: 55%;
+    }
+
+    .h1-name {
+        box-sizing: border-box;
+        font-size: 30px;
+    }
+
+    p {
+        box-sizing: border-box;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navBar {
+        box-sizing: border-box;
+        height: 7%;
+        padding: 10px;
+    }
+
+    .button-navBar {
+        box-sizing: border-box;
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .home {
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-content: center;
+        height: 100%;
+        width: 100%;
+        overflow-y: scroll;
+        margin: 0px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .content-left, .content-right {
+        box-sizing: border-box;
+        position: relative;
+        top: 10%;
+        display: flex;
+        justify-content: center;
+        width: 90%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .video {
+        box-sizing: border-box;
+        width: 100%;
+        height: 50%;
+    }
+
+    .h1-name {
+        box-sizing: border-box;
+        font-size: 25px;
+    }
+
+    p {
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+    
+}  
