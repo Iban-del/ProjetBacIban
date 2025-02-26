@@ -155,7 +155,7 @@ p {
 }
 
 /* Responsive Styles */
-@media (max-width: 1024px) {
+@media (max-width: 1454px) {
     html, body {
         box-sizing: border-box;
         height: auto;
