@@ -25,7 +25,7 @@ a:hover{
     height: 10%;
     width: 100%;
     position: fixed;
-    background-color: #231d2b;
+    background-color: #232b1d;
     display: flex;
     justify-content: end;
     align-items: center;
@@ -48,7 +48,7 @@ a:hover{
     text-decoration: none;
     background-color: transparent;
     border: none;
-    color: #75825c;
+    color: #6f5c82;
     font-size: 25px;
     font-weight: 500;
 }
